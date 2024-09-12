@@ -119,7 +119,7 @@ jobs:
           switches: -avzr --delete
           path: ./*
           remote_path: "path/on/your/server/where/you/want/the/code/to/be/deployed/to"
-          remote_host: "${{secrets.SEVER_IP_ADDRESS}}"
+          remote_host: "${{secrets.SERVER_IP_ADDRESS}}"
           remote_user: root
           remote_key: "${{ secrets.SSH_PRIVATE_KEY_STAGING }}"
 ```
