@@ -21,38 +21,37 @@ This Rust project automates the generation of SSH keys for GitHub Actions or any
 
 1. Clone this repository:
 
-   ```bash
-   git clone https://github.com/your-username/your-repository.git
-   ```
-
-````
+```bash
+  git clone https://github.com/your-username/your-repository.git
+```
 
 2. Navigate to the project directory:
 
+````bash
    ```bash
    cd your-repository
-   ```
+````
 
 3. Build the project:
 
-   ```bash
+```bash
    cargo build --release
-   ```
+```
 
 4. Run the project:
 
-   ```bash
+```bash
    cargo run --release
-   ```
+```
 
 ## Usage
 
 1. **Run the program**:
    When you run the program, you'll be prompted to enter the name you want to use for your SSH key. If you leave it blank, the default will be `github-actions`.
 
-   ```bash
+```bash
    Enter the name you want to use for the SSH key (default: github-actions):
-   ```
+```
 
 2. **SSH Key Generation**:
    The program generates a 4096-bit RSA key pair, with the private key stored in `~/.ssh/{key_name}` and the public key in `~/.ssh/{key_name}.pub`.
@@ -90,8 +89,6 @@ Contributions are welcome! Please feel free to submit a pull request or open an 
 
 For any questions or issues, please reach out to [your-email@example.com].
 
-```
-
 ### Key Sections:
 
 1. **Features**: Lists the core features of your project.
@@ -99,4 +96,3 @@ For any questions or issues, please reach out to [your-email@example.com].
 3. **Usage**: Describes how to interact with the tool, including the prompt for the key name, key generation, and adding the private key to GitHub Secrets.
 4. **License**: Mentions the license under which your project is available.
 5. **Contributing**: Information for people who want to contribute.
-````
