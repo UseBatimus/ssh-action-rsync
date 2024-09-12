@@ -77,6 +77,49 @@ MIIEpAIBAAKCAQEA4...
 -----END RSA PRIVATE KEY-----
 ```
 
+## Using it with GitHub Action
+
+Here is an example usage in GitHub action
+
+```yaml
+name: Deployment Action
+
+on:
+  push:
+    branches: [master]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Node LTS versions
+        uses: msimerson/node-lts-versions@v1.1.1
+      - name: Use Node.js 16
+        uses: actions/setup-node@v3
+      - name: Install all packages
+        run: npm install
+        env:
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      - name: Build
+        run: npm run build
+      - name: rsync deployments
+        uses: burnett01/rsync-deployments@5.1
+        with:
+          switches: -avzr --delete
+          path: ./*
+          remote_path: "path/on/your/server/where/you/want/the/code/to/be/deployed/to"
+          remote_host: "${{secrets.SEVER_IP_ADDRESS}}"
+          remote_user: root
+          remote_key: "${{ secrets.SSH_PRIVATE_KEY_STAGING }}"
+```
+
 ## License
 
 This project is licensed under the MIT License
@@ -84,15 +127,3 @@ This project is licensed under the MIT License
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a pull request or open an issue if you have any suggestions or improvements.
-
-## Contact
-
-For any questions or issues, please reach out to [your-email@example.com].
-
-### Key Sections:
-
-1. **Features**: Lists the core features of your project.
-2. **Getting Started**: Provides instructions on how to install and run the project.
-3. **Usage**: Describes how to interact with the tool, including the prompt for the key name, key generation, and adding the private key to GitHub Secrets.
-4. **License**: Mentions the license under which your project is available.
-5. **Contributing**: Information for people who want to contribute.
