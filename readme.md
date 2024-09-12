@@ -2,6 +2,10 @@
 
 This Rust project automates the generation of SSH keys for GitHub Actions or any other SSH authentication system. It generates an RSA SSH key pair, appends the public key to the `authorized_keys` file for authentication, and prints the private key so it can be added to GitHub Secrets.
 
+This would be relevant for you if you are setting up a new server or you are migrating. I find myself repeating the same process multiple times for my projects, that's why I created a script for it.
+
+Goodluck!
+
 ## Features
 
 - Allows the user to specify a custom SSH key name (defaults to `github-actions`).
