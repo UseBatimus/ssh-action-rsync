@@ -33,7 +33,7 @@ Goodluck!
 
 ````bash
    ```bash
-   cd ssh--action
+   cd ssh-action-rsync
 ````
 
 3. Run the project:
