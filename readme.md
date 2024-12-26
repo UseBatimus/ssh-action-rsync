@@ -26,7 +26,7 @@ Goodluck!
 1. Clone this repository:
 
 ```bash
-  git clone https://github.com/your-username/your-repository.git](https://github.com/UseBatimus/ssh-action-rsync
+  git clone https://github.com/UseBatimus/ssh-action-rsync
 ```
 
 2. Navigate to the project directory:
